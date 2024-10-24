@@ -22,10 +22,10 @@ Route::get('/posts', function ()
         'posts' => Post::all()]);
 });
 
-Route::get('/posts/{slug}', function($slug){
+Route::get('/posts/{post:slug}', function(Post $post){
   
 
-    $post = Post::find($slug);
+    
 
     return view('post',['title' => 'Single Post', 'post' => $post]);
 });
